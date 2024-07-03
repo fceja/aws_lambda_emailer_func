@@ -1,20 +1,21 @@
-// docker must be running in the background
-sudo ln -sf "$HOME/.docker/run/docker.sock" /var/run/docker.sock
 
-// compile typescript to javascript (at lambda func level)
-tsc
+<u>docker must be running in the background</u> <br/>
+`sudo ln -sf "$HOME/.docker/run/docker.sock" /var/run/docker.sock`
 
-// build (at project root)
-sam build
+<u>compile typescript to javascript (@ lambda func level)</u> <br/>
+`tsc`
 
-// invoke locally with event (at project root)
-sam local invoke SendEmailFunction --event lambdas/sendEmailFunc/event.json
+<u>build (@ project root)</u> <br/>
+`sam build`
 
-// invoke locally with no event (at project root)
-sam local invoke SendEmailFunction
+<u>invoke locally with event (@ project root)</u> <br/>
+`sam local invoke SendEmailFunction --event lambdas/sendEmailFunc/event.json`
 
-// zipping
-zip -r {path_to_lambda_dist}/{lambda_func}.zip \*
+<u>invoke locally with no event (@ project root)</u> <br/>
+`sam local invoke SendEmailFunction`
 
-// zip and upload (at lambdas/func/dist)
-zip -r -D lambda.zip \* && aws lambda update-function-code --function-name sendEmailFunc --zip-file fileb://lambda.zip --profile updateLambda
+<u>zipping</u> <br/>
+`zip -r {path_to_lambda_dist}/{lambda_func}.zip \*`
+
+<u>zip and upload (@ lambdas/{func_name}/dist)</u> <br/>
+`zip -r -D lambda.zip \* && aws lambda update-function-code --function-name {lambda_func} --zip-file fileb://lambda.zip --profile {profile}`
