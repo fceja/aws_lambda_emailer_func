@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: emailer_api_lambda_stack
+
+Resources:
+  SendEmailFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: sendEmailFunc
+      Handler: lambdas/sendEmailFunc/dist/index.lambdaHandler
+      Runtime: nodejs18.x

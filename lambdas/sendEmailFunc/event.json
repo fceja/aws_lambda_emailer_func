@@ -1,0 +1,6 @@
+{
+  "body": "{\"contactName\": \"testContactName\", \"contactEmail\": \"test@postman.com\", \"contactEmailMessage\": \"test email message\"}",
+  "headers": {
+    "origin": "lambda-origin"
+  }
+}

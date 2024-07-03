@@ -1,0 +1,16 @@
+{
+  "name": "aws_lambda_emailer_func",
+  "version": "1.0.0",
+  "description": "aws lambda emailer func",
+  "main": "app.js",
+  "repository": "https://github.com/fceja/aws_lambda_emailer_func.git",
+  "dependencies": {
+    "aws-lambda": "1.0.7",
+    "aws-sdk": "2.1455.0",
+    "nodemailer": "^6.9.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.120",
+    "@types/nodemailer": "^6.4.9"
+  }
+}
