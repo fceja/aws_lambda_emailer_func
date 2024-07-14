@@ -4,40 +4,40 @@ Uses AWS CloudFormation template.
 
 ## CLI commands
 Docker commands can be executed without root privileges.<br/>
-- **Docker must be running in the background<br/>
-- ```
-  sudo ln -sf "$HOME/.docker/run/docker.sock" /var/run/docker.sock
-  ```
+  - **Docker must be running in the background<br/>
+  - ```
+    sudo ln -sf "$HOME/.docker/run/docker.sock" /var/run/docker.sock
+    ```
 
 Compile (@ lambda func level) <br/>
-```
-tsc
-```
+- ```
+  tsc
+  ```
 
 Build (@ project root) <br/>
-```
-sam build
-```
+  - ```
+    sam build
+    ```
 
 Invoke Lambda locally with event (@ project root) <br/>
-```
-sam local invoke SendEmailFunction --event lambdas/sendEmailFunc/event.json
-```
+  - ```
+    sam local invoke SendEmailFunction --event lambdas/sendEmailFunc/event.json
+    ```
 
 Invoke Lambda locally with no event (@ project root) <br/>
-```
-sam local invoke SendEmailFunction
-```
+  - ```
+    sam local invoke SendEmailFunction
+    ```
 
-Zip <br/>
-```
-zip -r {path_to_lambda_dist}/{lambda_func}.zip \*
-```
+Zip Lambda <br/>
+  - ```
+    zip -r {path_to_lambda_dist}/{lambda_func}.zip \*
+    ```
 
-Zip and upload (@ lambdas/{func_name}/dist) <br/>
-```
-zip -r -D lambda.zip \* && aws lambda update-function-code --function-name {lambda_func} --zip-file fileb://lambda.zip --profile {profile}
-```
+Zip Lambda and upload (@ lambdas/{func_name}/dist) <br/>
+  - ```
+    zip -r -D lambda.zip \* && aws lambda update-function-code --function-name {lambda_func} --zip-file fileb://lambda.zip --profile {profile}
+    ```
 
 ## Technologies & Tools
 <p>
